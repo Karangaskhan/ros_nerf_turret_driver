@@ -1,8 +1,0 @@
-prefix=/export/bulk/local-home/kpurohit/projects/hobbies/turretController/catkin_ws/install
-
-Name: turret_controller
-Description: Description of turret_controller
-Version: 0.0.0
-Cflags: 
-Libs: -L/export/bulk/local-home/kpurohit/projects/hobbies/turretController/catkin_ws/install/lib 
-Requires: 
