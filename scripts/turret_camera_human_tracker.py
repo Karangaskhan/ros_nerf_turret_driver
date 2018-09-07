@@ -18,13 +18,10 @@ def callback(data):
         target = people[0]
         #if(target.class_name == "person" and target.confidence > 0.5):
         # if True:
-        print(target)
         (x, y) = calculateCentroid(target)
         if(isTargetInCrosshair(x,y)):
-            print('gotchainmy sights')
             sendCommands(320,240)
         else:
-            print(panRequired(x,y))
             if(panRequired(x,y)):
                 sendCommands(x, 240)
             else:
@@ -35,7 +32,6 @@ def callback(data):
 def calculateCentroid(target):
     average_x = (target.x_max + target.x_min) / 2
     average_y = (target.y_max + target.y_min) / 2
-    print('AVERAGE_X: ' + str(average_x))
     return (average_x, average_y)
 
 def isTargetInCrosshair(x,y):
@@ -51,7 +47,6 @@ def sendCommands(x,y):
         panValue = 1
     elif(x - 320 > 0):
         panValue = -1
-    print(panValue)
     pubPan.publish(panValue)
 
     # if(y == 240):
@@ -76,7 +71,7 @@ def connectToTurret():
     # subscribed to /dnn_objects to find objects of person
     rospy.Subscriber("dnn_objects", DetectedObjectArray, callback)
     # starts the node
-    rospy.init_node('joy_turret_commander')
+    rospy.init_node('human_tracker')
     rospy.spin()
 
 if __name__ == '__main__':

@@ -6,7 +6,7 @@
 <launch>
     <node name="turret_listener" pkg="turret_controller" type="turret_listener.py">
     </node>
-    <node name="turret_commander" pkg="turret_controller" type="turret_camera_human_tracker.py">
+    <node name="human_tracker" pkg="turret_controller" type="turret_camera_human_tracker.py">
     </node>
 
     <node name="camera" pkg="cv_camera" type="cv_camera_node">
