@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!-- Launches everything for human tracking using a camera+nerf turret combo.
+ -->
+
+<launch>
+    <node name="turret_listener" pkg="turret_controller" type="turret_listener.py">
+    </node>
+    <node name="turret_commander" pkg="turret_controller" type="turret_camera_human_tracker.py">
+    </node>
+
+    <node name="camera" pkg="cv_camera" type="cv_camera_node">
+    </node>
+    <node name="image_viewer" pkg="rqt_image_view" type="rqt_image_view">
+        
+    </node>
+    <include file="$(find dnn_detect)/launch/dnn_detect.launch">
+        <arg name="camera" value="/camera"/>
+        <arg name="image" value="image_raw"/>
+    </include>
+</launch>
