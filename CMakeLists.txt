@@ -8,6 +8,7 @@ project(turret_controller)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED)
+#find_package(dnn_detect)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -145,6 +146,8 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+
+add_dependencies(dnn_detect ${catkin_EXPORTED_TARGETS})
 
 #############
 ## Install ##
