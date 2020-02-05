@@ -12,8 +12,8 @@
     <node name="camera" pkg="cv_camera" type="cv_camera_node">
     </node>
     <node name="image_viewer" pkg="rqt_image_view" type="rqt_image_view">
-        
     </node>
+    
     <include file="$(find dnn_detect)/launch/dnn_detect.launch">
         <arg name="camera" value="/camera"/>
         <arg name="image" value="image_raw"/>

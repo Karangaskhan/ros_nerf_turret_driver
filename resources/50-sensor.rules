@@ -1,0 +1,2 @@
+SUBSYSTEM=="video4linux", GROUP="video", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2123", ATTRS{idProduct}=="1010", MODE="0666", GROUP="plugdev"
