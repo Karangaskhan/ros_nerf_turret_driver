@@ -10,6 +10,11 @@
     </node>
 
     <node name="camera" pkg="cv_camera" type="cv_camera_node">
+        <param name="rate" type="double" value="4"/>
+        <param name="image_width" type="int" value="1920"/>
+        <param name="image_height" type="int" value="1080"/>
+<!--        <param name="image_width" type="int" value="320"/>
+        <param name="image_height" type="int" value="240"/> -->
     </node>
     <node name="image_viewer" pkg="rqt_image_view" type="rqt_image_view">
     </node>

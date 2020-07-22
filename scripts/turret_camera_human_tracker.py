@@ -13,8 +13,9 @@ from dnn_detect.msg import DetectedObjectArray
 # axis 4 aka right stick vertical controls angular speed
 
 def callback(data):
-    people = filter(lambda o : o.class_name == "person", data.objects)
+    people = list(filter(lambda o : o.class_name == "person", data.objects))
     if(people):
+        rospy.logwarn(people)
         target = people[0]
         #if(target.class_name == "person" and target.confidence > 0.5):
         # if True:
